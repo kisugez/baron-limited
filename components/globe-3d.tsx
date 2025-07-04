@@ -3,7 +3,7 @@ import dynamic from "next/dynamic";
 
 const Globe = dynamic(() => import("react-globe.gl"), { ssr: false });
 
-export default function Globe3D({ width = 600, height = 600, ...props }) {
+export default function Globe3D({ width = 400, height = 400, ...props }) {
   return (
     <div
       style={{
