@@ -4,6 +4,7 @@ import { useState, useEffect } from "react"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { FaCar, FaHome, FaBuilding, FaChartLine, FaShieldAlt, FaRedo, FaCheckCircle } from "react-icons/fa"
+import { MovingIcons } from "@/components/moving-icons"
 
 export function ServicesShowcase() {
   const [isVisible, setIsVisible] = useState(false)
@@ -25,8 +26,10 @@ export function ServicesShowcase() {
   }, [])
 
   return (
-    <section id="services-showcase" className="py-24 gradient-blue-section">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="services-showcase" className="py-24 gradient-blue-section relative overflow-hidden">
+      {/* MovingIcons background for this section only, with dark blue icons */}
+      <MovingIcons variant="background" />
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
         {/* Main Content Grid */}
         <div className="grid lg:grid-cols-2 gap-16 items-start">
           {/* Left Side - Main Heading */}

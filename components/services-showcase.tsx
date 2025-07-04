@@ -5,6 +5,7 @@ import Image from "next/image"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { FaCar, FaHome, FaBuilding, FaChartLine, FaShieldAlt, FaRedo } from "react-icons/fa"
+import { FiArrowRight as ArrowRight } from "react-icons/fi" // Correctly importing FiArrowRight and aliasing it as ArrowRight
 
 export function ServicesShowcase() {
   const [isVisible, setIsVisible] = useState(false)
