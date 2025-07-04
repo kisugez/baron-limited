@@ -28,7 +28,7 @@ export function ServicesShowcase() {
   return (
     <section id="services-showcase" className="py-24 gradient-blue-section relative overflow-hidden">
       {/* MovingIcons background for this section only, with dark blue icons */}
-      <MovingIcons variant="background" />
+      <MovingIcons variant="background-dark" />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
         {/* Main Content Grid */}
         <div className="grid lg:grid-cols-2 gap-16 items-start">
