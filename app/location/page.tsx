@@ -46,9 +46,9 @@ export default function LocationPage() {
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
           <div className={`text-center space-y-8 ${isVisible ? "scroll-reveal revealed" : "scroll-reveal"}`}>
-            <h1 className="text-5xl lg:text-7xl font-bold text-white leading-tight">Visit Our Office</h1>
+            <h1 className="text-5xl lg:text-7xl font-bold text-white leading-tight">Visit Our Offices</h1>
             <p className="text-xl text-white/80 max-w-3xl mx-auto">
-              Located in the heart of Nairobi CBD, our office is easily accessible and designed to provide you with the
+              Our offices are easily accessible and designed to provide you with the
               best service experience.
             </p>
           </div>
@@ -57,110 +57,101 @@ export default function LocationPage() {
 
       {/* Location Details */}
       <section className="py-24 gradient-blue-light">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-16">
-            {/* Map Placeholder */}
-            <div className={`scroll-reveal`}>
-              <div className="bg-white/60 backdrop-blur-sm rounded-2xl h-96 flex items-center justify-center shadow-lg">
-                <div className="w-full h-full rounded-2xl overflow-hidden">
-                  <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d255285.78415500378!2d36.545091128125!3d-1.268605807114327!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f05277f6b2877%3A0x2fea93ffce995873!2sBARON%20CAPITAL%20LIMITED!5e0!3m2!1sen!2sqa!4v1751576532766!5m2!1sen!2sqa"
-                    width="100%"
-                    height="100%"
-                    style={{ border: 0 }}
-                    allowFullScreen={true}
-                    loading="lazy"
-                    referrerPolicy="no-referrer-when-downgrade"
-                    title="Baron Capital Map"
-                  ></iframe>
-                </div>
+        <div className="space-y-24">
+          {/* Main Branch - Current Location */}
+          <div className="w-full flex flex-col items-center">
+            <div className="flex flex-col items-center mb-4">
+              <span className="inline-flex items-center justify-center w-14 h-14 rounded-full bg-gradient-to-tr from-blue-900 to-blue-400 shadow-lg mb-2">
+                <FaMapMarkerAlt className="text-white text-3xl" />
+              </span>
+              <h2 className="text-3xl font-bold text-gray-900 text-center">Current Main Branch </h2>
+            </div>
+            <div className="relative w-full max-w-5xl group transition-transform duration-300 hover:-translate-y-2">
+              <div className="absolute top-0 left-0 w-full h-20 bg-gradient-to-b from-blue-100/60 to-transparent rounded-t-3xl z-10 pointer-events-none"></div>
+              <div className="bg-white/80 backdrop-blur-md rounded-3xl border-4 border-blue-700/30 shadow-2xl overflow-hidden transition-shadow duration-300 group-hover:shadow-blue-300/60">
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d255285.78415500378!2d36.545091128125!3d-1.268605807114327!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f05277f6b2877%3A0x2fea93ffce995873!2sBARON%20CAPITAL%20LIMITED!5e0!3m2!1sen!2sqa!4v1751576532766!5m2!1sen!2sqa"
+                  width="100%"
+                  height="420"
+                  style={{ border: 0 }}
+                  allowFullScreen={true}
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  title="Baron Capital Map"
+                  className="rounded-2xl w-full"
+                ></iframe>
               </div>
             </div>
-
-            {/* Location Information */}
-            <div className={`space-y-8 scroll-reveal`}>
-              <h2 className="text-3xl font-bold text-gray-900">Our Location</h2>
-
-              <div className="space-y-6">
-                <div className="flex items-start space-x-4 bg-white/60 backdrop-blur-sm rounded-2xl p-6">
-                  <div className="p-3 rounded-full" style={{ backgroundColor: "#041a55" }}>
-                    <FaMapMarkerAlt className="h-6 w-6 text-white" />
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-gray-900 mb-1">Address</h3>
-                    <p className="text-gray-600">Baron Capital Limited</p>
-                    <p className="text-gray-600">Kimathi Street</p>
-                    <p className="text-gray-600">Nairobi CBD, Kenya</p>
-                  </div>
-                </div>
-
-                <div className="flex items-start space-x-4 bg-white/60 backdrop-blur-sm rounded-2xl p-6">
-                  <div className="p-3 rounded-full" style={{ backgroundColor: "#041a55" }}>
-                    <FaPhone className="h-6 w-6 text-white" />
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-gray-900 mb-1">Phone</h3>
-                    <p className="text-gray-600">+254 700 000 000</p>
-                    <p className="text-gray-600">+254 711 000 000</p>
-                  </div>
-                </div>
-
-                <div className="flex items-start space-x-4 bg-white/60 backdrop-blur-sm rounded-2xl p-6">
-                  <div className="p-3 rounded-full" style={{ backgroundColor: "#041a55" }}>
-                    <FaEnvelope className="h-6 w-6 text-white" />
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-gray-900 mb-1">Email</h3>
-                    <p className="text-gray-600">info@baroncapital.co.ke</p>
-                  </div>
-                </div>
-
-                <div className="flex items-start space-x-4 bg-white/60 backdrop-blur-sm rounded-2xl p-6">
-                  <div className="p-3 rounded-full" style={{ backgroundColor: "#041a55" }}>
-                    <FaRegClock className="h-6 w-6 text-white" />
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-gray-900 mb-1">Business Hours</h3>
-                    <div className="space-y-1 text-gray-600">
-                      <p>Monday - Friday: 8:00 AM - 6:00 PM</p>
-                      <p>Saturday: 9:00 AM - 2:00 PM</p>
-                      <p>Sunday: Closed</p>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="flex items-start space-x-4 bg-white/60 backdrop-blur-sm rounded-2xl p-6">
-                  <div className="p-3 rounded-full" style={{ backgroundColor: "#041a55" }}>
-                    <FaCar className="h-6 w-6 text-white" />
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-gray-900 mb-1">Parking</h3>
-                    <p className="text-gray-600">Free parking available</p>
-                    <p className="text-gray-600">Street parking and nearby lots</p>
-                  </div>
-                </div>
-              </div>
-
-              <div className="flex flex-col sm:flex-row gap-4">
-                <Button
-                  size="lg"
-                  className="rounded-full text-white hover-lift"
-                  style={{ backgroundColor: "#041a55" }}
-                  asChild
-                >
-                  <Link href="/contact">Schedule a Visit</Link>
-                </Button>
-                <Button
-                  size="lg"
-                  variant="outline"
-                  className="rounded-full hover-lift bg-transparent"
-                  style={{ borderColor: "#041a55", color: "#041a55" }}
-                  asChild
-                >
-                  <a href="tel:+254700000000">Call Now</a>
-                </Button>
+          </div>
+          {/* Branch 1: Jewel Complex */}
+          <div className="w-full flex flex-col items-center">
+            <div className="flex flex-col items-center mb-4">
+              <span className="inline-flex items-center justify-center w-14 h-14 rounded-full bg-gradient-to-tr from-blue-900 to-blue-400 shadow-lg mb-2">
+                <FaMapMarkerAlt className="text-white text-3xl" />
+              </span>
+              <h2 className="text-3xl font-bold text-blue-900 text-center">Jewel Complex Branch</h2>
+            </div>
+            <div className="relative w-full max-w-5xl group transition-transform duration-300 hover:-translate-y-2">
+              <div className="absolute top-0 left-0 w-full h-20 bg-gradient-to-b from-blue-100/60 to-transparent rounded-t-3xl z-10 pointer-events-none"></div>
+              <div className="bg-white/80 backdrop-blur-md rounded-3xl border-4 border-blue-700/30 shadow-2xl overflow-hidden transition-shadow duration-300 group-hover:shadow-blue-300/60">
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.9147668953156!2d36.887420075319376!3d-1.2193999987689543!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f15001ea5a7cf%3A0x4f6d959e1d215455!2sJEWEL%20COMPLEX!5e0!3m2!1sen!2sqa!4v1751690230909!5m2!1sen!2sqa"
+                  width="100%"
+                  height="420"
+                  style={{ border: 0 }}
+                  allowFullScreen={true}
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  title="Jewel Complex Branch"
+                  className="rounded-2xl w-full"
+                ></iframe>
               </div>
             </div>
+            <a href="https://maps.app.goo.gl/jrH2XpxY4CV3sBNe9" target="_blank" rel="noopener noreferrer" className="text-blue-700 underline text-sm text-center block mt-2">Open in Google Maps</a>
+          </div>
+          {/* Branch 2: Ngong Business Arcade */}
+          <div className="w-full flex flex-col items-center">
+            <div className="flex flex-col items-center mb-4">
+              <span className="inline-flex items-center justify-center w-14 h-14 rounded-full bg-gradient-to-tr from-blue-900 to-blue-400 shadow-lg mb-2">
+                <FaMapMarkerAlt className="text-white text-3xl" />
+              </span>
+              <h2 className="text-3xl font-bold text-blue-900 text-center">Ngong Business Arcade Branch</h2>
+            </div>
+            <div className="relative w-full max-w-5xl group transition-transform duration-300 hover:-translate-y-2">
+              <div className="absolute top-0 left-0 w-full h-20 bg-gradient-to-b from-blue-100/60 to-transparent rounded-t-3xl z-10 pointer-events-none"></div>
+              <div className="bg-white/80 backdrop-blur-md rounded-3xl border-4 border-blue-700/30 shadow-2xl overflow-hidden transition-shadow duration-300 group-hover:shadow-blue-300/60">
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.6967492859353!2d36.65371407531964!3d-1.3585781986285457!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f0321a19fa635%3A0x6b08bcc9d46155f4!2sNgong%20Business%20Arcade!5e0!3m2!1sen!2sqa!4v1751690459517!5m2!1sen!2sqa"
+                  width="100%"
+                  height="420"
+                  style={{ border: 0 }}
+                  allowFullScreen={true}
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  title="Ngong Business Arcade Branch"
+                  className="rounded-2xl w-full"
+                ></iframe>
+              </div>
+            </div>
+          </div>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center mt-12">
+            <Button
+              size="lg"
+              className="rounded-full text-white hover-lift"
+              style={{ backgroundColor: "#041a55" }}
+              asChild
+            >
+              <Link href="/contact">Schedule a Visit</Link>
+            </Button>
+            <Button
+              size="lg"
+              variant="outline"
+              className="rounded-full hover-lift bg-transparent"
+              style={{ borderColor: "#041a55", color: "#041a55" }}
+              asChild
+            >
+              <a href="tel:+254700000000">Call Now</a>
+            </Button>
           </div>
         </div>
       </section>

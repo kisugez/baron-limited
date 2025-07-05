@@ -160,7 +160,7 @@ export function ServicesShowcase() {
                       <div className="w-8 h-8 bg-gray-300 rounded-full flex items-center justify-center text-white text-sm font-bold">
                         O
                       </div>
-                      <span className="font-medium text-gray-700">Other Lender</span>
+                      <span className="font-medium text-gray-700">Banks</span>
                     </div>
                   </div>
                   <div className="mt-2 text-right">
