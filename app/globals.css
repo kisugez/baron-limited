@@ -1,3 +1,9 @@
+@import url('https://fonts.cdnfonts.com/css/graphik');
+
+html, body, body * {
+  font-family: 'Graphik', 'Helvetica Neue', Arial, sans-serif !important;
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
