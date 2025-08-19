@@ -1,7 +1,7 @@
-@import url('https://fonts.cdnfonts.com/css/graphik');
+@import "/fonts/circular-std.css";
 
 html, body, body * {
-  font-family: 'Graphik', 'Helvetica Neue', Arial, sans-serif !important;
+  font-family: 'Circular Std', Arial, sans-serif !important;
 }
 
 @tailwind base;
@@ -16,9 +16,33 @@ html, body, body * {
   --baron-grey-dark: #374151;
 }
 
-.font-poppins {
-  font-family: var(--font-poppins);
+body {
+  background: #f3f4f6 !important;
 }
+
+section {
+  /* Remove forced background so sections can use their own bg color */
+}
+
+.gradient-blue-section,
+.gradient-blue-light,
+.gradient-blue-deep {
+  background: #f3f4f6 !important;
+}
+
+.bg-white,
+.bg-white\/60,
+.bg-white\/70,
+.bg-white\/80,
+.bg-white\/90 {
+  /* Remove forced background so these classes can use their own bg color */
+}
+
+.card-hover-effect {
+  /* Remove forced background so these classes can use their own bg color */
+}
+
+/* Remove gradients for homepage and sections below homepage */
 
 .animate-float {
   animation: float 6s ease-in-out infinite;

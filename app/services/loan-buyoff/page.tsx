@@ -134,19 +134,6 @@ export default function LoanBuyoffPage() {
                 </div>
               </div>
             </div>
-
-            <div
-              className={`${isVisible ? "scroll-reveal revealed" : "scroll-reveal"}`}
-              style={{ animationDelay: "0.3s" }}
-            >
-              <Image
-                src="/Smart-Spending-How-to-Save-Money-with-Smart-Financial-Tips-.webp?height=500&width=400"
-                alt="Loan Buy-Off"
-                width={1000}
-                height={500}
-                className="rounded-2xl shadow-2xl hover-lift"
-              />
-            </div>
           </div>
         </div>
       </section>

@@ -134,19 +134,6 @@ export default function AssetFinancePage() {
                 </div>
               </div>
             </div>
-
-            <div
-              className={`${isVisible ? "scroll-reveal revealed" : "scroll-reveal"}`}
-              style={{ animationDelay: "0.3s" }}
-            >
-              <Image
-                src="/blue-money-business-graph-finance-600nw-2166540277.webp?height=500&width=400"
-                alt="Asset Finance"
-                width={1100}
-                height={500}
-                className="rounded-2xl shadow-2xl hover-lift"
-              />
-            </div>
           </div>
         </div>
       </section>

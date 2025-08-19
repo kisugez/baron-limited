@@ -50,47 +50,42 @@ export function ClientStories() {
   ]
 
   return (
-    <section id="client-stories" className="py-24 gradient-blue-section">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Section Header */}
-        <div className={`text-center mb-16 ${isVisible ? "scroll-reveal revealed" : "scroll-reveal"}`}>
-          <h2 className="text-4xl font-bold text-gray-900 mb-4">
-            What Our <span className="text-gradient">Clients Say</span>
-          </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Real stories from real people who have achieved their financial goals with Baron Capital
-          </p>
-        </div>
-
-        {/* Testimonials Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {testimonials.map((testimonial, index) => (
-            <div
-              key={testimonial.name}
-              className={`bg-white/80 backdrop-blur-sm rounded-2xl p-8 shadow-lg card-hover-effect ${
-                isVisible ? "scroll-reveal revealed" : "scroll-reveal"
-              }`}
-              style={{ animationDelay: `${index * 0.1}s` }}
-            >
+    <section id="client-stories" className="relative py-24">
+      {/* Background Image */}
+      <div className="absolute inset-0 w-full h-full -z-10">
+        <Image
+          src="/2148190687.jpg"
+          alt="Happy client background"
+          fill
+          style={{ objectFit: "cover" }}
+          className="brightness-75"
+        />
+      </div>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-stretch">
+        {/* Left side empty for transition */}
+        <div className="md:w-1/2 w-full" />
+        {/* Right Overlay with Testimonial - full height */}
+        <div className="md:w-1/2 w-full flex items-center">
+          <div className="bg-blue-900/70 backdrop-blur-lg rounded-2xl p-10 md:p-16 text-white w-full h-full flex flex-col justify-center transition-all duration-700">
+            <h2 className="text-4xl font-bold mb-6">
+              What Our <span className="text-gradient">Clients Say</span>
+            </h2>
+            <div className="mb-8">
               <div className="flex items-center space-x-1 mb-4">
-                {[...Array(testimonial.rating)].map((_, i) => (
-                  <FaStar key={i} className="h-5 w-5 text-yellow-400 fill-current" />
+                {[...Array(testimonials[0].rating)].map((_, i) => (
+                  <FaStar key={i} className="h-6 w-6 text-yellow-400 fill-current" />
                 ))}
               </div>
-
               <div className="relative mb-6">
-                <FaQuoteLeft className="absolute -top-2 -left-2 h-8 w-8 text-blue-200" />
-                <p className="text-gray-700 leading-relaxed pl-6">{testimonial.content}</p>
+                <FaQuoteLeft className="absolute -top-2 -left-2 h-10 w-10 text-blue-200" />
+                <p className="text-xl leading-relaxed pl-12 italic">{testimonials[0].content}</p>
               </div>
-
-              <div className="flex items-center space-x-4">
-                <div>
-                  <div className="font-semibold text-gray-900">{testimonial.name}</div>
-                  <div className="text-sm text-gray-600">{testimonial.role}</div>
-                </div>
+              <div className="mt-6">
+                <div className="font-semibold text-2xl">{testimonials[0].name}</div>
+                <div className="text-base text-blue-100">{testimonials[0].role}</div>
               </div>
             </div>
-          ))}
+          </div>
         </div>
       </div>
     </section>

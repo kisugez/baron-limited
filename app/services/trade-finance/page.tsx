@@ -73,7 +73,6 @@ export default function TradeFinancePage() {
       >
         <MovingIcons variant="background" />
         <div className="absolute inset-0">
-          <div className="absolute top-20 right-10 w-40 h-40 bg-white/5 rounded-full animate-float"></div>
           <div className="absolute bottom-20 left-20 w-28 h-28 bg-white/10 rounded-full animate-float-delayed"></div>
         </div>
 
@@ -136,15 +135,6 @@ export default function TradeFinancePage() {
                   <div className="font-bold text-white">Global</div>
                   <div className="text-sm text-white/80">Coverage</div>
                 </div>
-              </div>
-            </div>
-
-            <div
-              className={`${isVisible ? "scroll-reveal revealed" : "scroll-reveal"}`}
-              style={{ animationDelay: "0.3s" }}
-            >
-              <div className="w-full h-[400px] lg:h-[500px] flex items-center justify-center">
-                <Globe3D />
               </div>
             </div>
           </div>

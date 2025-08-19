@@ -83,18 +83,14 @@ export default function AboutPage() {
   ]
 
   return (
-    <div className="min-h-screen pt-16 page-enter">
+    <div className="min-h-screen pt-16 page-enter bg-gray-100">
       {/* Hero Section */}
-      <section
-        className="py-24 relative overflow-hidden"
-        style={{ background: "linear-gradient(135deg, #041a55 0%, #0f2a6b 100%)" }}
-      >
-        <MovingIcons variant="background" />
-        <div className="absolute inset-0">
-          <div className="absolute top-20 left-10 w-32 h-32 bg-white/5 rounded-full animate-float"></div>
-          <div className="absolute bottom-20 right-20 w-40 h-40 bg-white/10 rounded-full animate-float-delayed"></div>
+      <section className="py-24 relative overflow-hidden">
+        <div className="absolute inset-0 w-full h-full -z-10">
+          <img src="/baron logo.jpg" alt="About background" className="w-full h-full object-cover" />
+          <div className="absolute inset-0 bg-black/60" />
         </div>
-
+        <MovingIcons variant="background" />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
           <div className={`text-center space-y-8 ${isVisible ? "scroll-reveal revealed" : "scroll-reveal"}`}>
             <h1 className="text-5xl lg:text-7xl font-bold text-white leading-tight">About Baron Capital Limited</h1>

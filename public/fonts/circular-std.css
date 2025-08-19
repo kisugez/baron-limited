@@ -1,0 +1,46 @@
+/* Circular Std Font Faces */
+@font-face {
+  font-family: 'Circular Std';
+  src: url('/fonts/circular-std/CircularStd-Book.woff2') format('woff2'),
+       url('/fonts/circular-std/CircularStd-Book.woff') format('woff'),
+       url('/fonts/circular-std/CircularStd-Book.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Circular Std';
+  src: url('/fonts/circular-std/CircularStd-Medium.woff2') format('woff2'),
+       url('/fonts/circular-std/CircularStd-Medium.woff') format('woff'),
+       url('/fonts/circular-std/CircularStd-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Circular Std';
+  src: url('/fonts/circular-std/CircularStd-Bold.woff2') format('woff2'),
+       url('/fonts/circular-std/CircularStd-Bold.woff') format('woff'),
+       url('/fonts/circular-std/CircularStd-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Circular Std';
+  src: url('/fonts/circular-std/CircularStd-Black.woff2') format('woff2'),
+       url('/fonts/circular-std/CircularStd-Black.woff') format('woff'),
+       url('/fonts/circular-std/CircularStd-Black.ttf') format('truetype');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+.font-circular, html, body {
+  font-family: 'Circular Std', Arial, sans-serif !important;
+}
+
+.font-circular-medium {
+  font-family: 'Circular Std', Arial, sans-serif !important;
+  font-weight: 500 !important;
+}

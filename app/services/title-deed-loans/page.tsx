@@ -134,19 +134,6 @@ export default function TitleDeedLoansPage() {
                 </div>
               </div>
             </div>
-
-            <div
-              className={`${isVisible ? "scroll-reveal revealed" : "scroll-reveal"}`}
-              style={{ animationDelay: "0.3s" }}
-            >
-              <Image
-                src="/bigstock-223973281.webp?height=500&width=400"
-                alt="Title Deed Loans"
-                width={1100}
-                height={500}
-                className="rounded-2xl shadow-2xl hover-lift"
-              />
-            </div>
           </div>
         </div>
       </section>

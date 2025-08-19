@@ -134,19 +134,7 @@ export default function BondsPage() {
                 </div>
               </div>
             </div>
-
-            <div
-              className={`${isVisible ? "scroll-reveal revealed" : "scroll-reveal"}`}
-              style={{ animationDelay: "0.3s" }}
-            >
-              <Image
-                src="/Secure-Supply-Chain-Assurance.webp?height=500&width=400"
-                alt="Bid & Performance Bonds"
-                width={1000}
-                height={500}
-                className="rounded-2xl shadow-2xl hover-lift"
-              />
-            </div>
+            {/* Removed right-side image */}
           </div>
         </div>
       </section>

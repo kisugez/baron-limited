@@ -99,18 +99,14 @@ export default function PropertyVehiclesPage() {
   ]
 
   return (
-    <div className="min-h-screen pt-16 page-enter">
+    <div className="min-h-screen pt-16 page-enter bg-gray-100">
       {/* Hero Section */}
-      <section
-        className="py-hero relative overflow-hidden"
-        style={{ background: "linear-gradient(135deg, #041a55 0%, #0f2a6b 100%)" }}
-      >
-        <MovingIcons variant="background" />
-        <div className="absolute inset-0">
-          <div className="absolute top-20 left-10 w-32 h-32 bg-white/5 rounded-full animate-float"></div>
-          <div className="absolute bottom-20 right-20 w-40 h-40 bg-white/10 rounded-full animate-float-delayed"></div>
+      <section className="py-hero relative overflow-hidden">
+        <div className="absolute inset-0 w-full h-full -z-10">
+          <img src="/three-dimensional-house-model-Photoroom.png" alt="Property background" className="w-full h-full object-cover" />
+          <div className="absolute inset-0 bg-black/60" />
         </div>
-
+        <MovingIcons variant="background" />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
           <div className={`text-center space-y-6 ${isVisible ? "scroll-reveal revealed" : "scroll-reveal"}`}>
             <div className="inline-flex items-center space-x-4 px-6 py-3 bg-white/10 backdrop-blur-sm rounded-full">
@@ -119,18 +115,14 @@ export default function PropertyVehiclesPage() {
               <FaCar className="h-6 w-6 text-white" />
               <span className="font-semibold text-white">Property & Vehicle Finance</span>
             </div>
-
             <h1 className="text-5xl lg:text-6xl font-bold text-white leading-tight">
               Finance Your Dreams
               <br />
               <span className="text-white/90">Property & Vehicle Solutions</span>
             </h1>
-
             <p className="text-xl text-white/80 max-w-4xl mx-auto leading-relaxed">
-              Whether you're buying your dream home, investing in commercial property, or financing your next vehicle,
-              we provide comprehensive solutions with competitive rates and flexible terms.
+              Whether you're buying your dream home, investing in commercial property, or financing your next vehicle, we provide comprehensive solutions with competitive rates and flexible terms.
             </p>
-
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button size="lg" className="rounded-full bg-white text-blue-900 hover:bg-white/90 px-8 py-3" asChild>
                 <Link href="/contact" className="flex items-center space-x-2">
