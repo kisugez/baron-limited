@@ -61,93 +61,32 @@ export default function LogbookLoansPage() {
   ]
 
   return (
-    <div className="min-h-screen pt-16 page-enter">
-      {/* Hero Section */}
-      <section
-        className="py-hero relative overflow-hidden"
-        style={{ background: "linear-gradient(135deg, #041a55 0%, #0f2a6b 100%)" }}
-      >
-        <MovingIcons variant="background" />
-        <div className="absolute inset-0">
-          <div className="absolute top-20 right-10 w-40 h-40 bg-white/5 rounded-full animate-float"></div>
-          <div className="absolute bottom-20 left-20 w-28 h-28 bg-white/10 rounded-full animate-float-delayed"></div>
-        </div>
-
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div className={`space-y-6 ${isVisible ? "scroll-reveal revealed" : "scroll-reveal"}`}>
-              <div className="flex items-center space-x-3">
-                <div className="p-4 bg-blue-500 rounded-2xl shadow-lg">
-                  <FaCar className="h-8 w-8 text-white" />
-                </div>
-                <span className="text-white font-semibold text-lg">Logbook Loans</span>
-              </div>
-
-              <h1 className="text-5xl lg:text-6xl font-bold text-white leading-tight">
-                Quick Cash with Your <span className="text-white/90">Vehicle</span>
-              </h1>
-
-              <p className="text-xl text-white/80 leading-relaxed">
-                Get instant cash using your vehicle as collateral while you continue driving. Our logbook loans offer
-                competitive rates with flexible repayment terms designed around your needs.
-              </p>
-
-              <div className="flex flex-col sm:flex-row gap-4">
-                <Button size="lg" className="rounded-full bg-white text-blue-900 hover:bg-white/90 px-8 py-3" asChild>
-                  <Link href="/contact" className="flex items-center space-x-2">
-                    <FaCalculator className="h-5 w-5" />
-                    <span>Apply Now</span>
-                  </Link>
-                </Button>
-                <Button
-                  size="lg"
-                  variant="outline"
-                  className="rounded-full border-white text-white hover:bg-white hover:text-blue-900 px-8 py-3 bg-transparent"
-                  asChild
-                >
-                  <Link href="/contact">Get Quote</Link>
-                </Button>
-              </div>
-
-              {/* Key Benefits */}
-              <div className="grid grid-cols-3 gap-4 pt-6">
-                <div className="text-center">
-                  <div className="p-3 bg-white/20 backdrop-blur-sm rounded-full w-fit mx-auto mb-2">
-                    <FaShieldAlt className="h-6 w-6 text-white" />
-                  </div>
-                  <div className="font-bold text-white">70%</div>
-                  <div className="text-sm text-white/80">Vehicle Value</div>
-                </div>
-                <div className="text-center">
-                  <div className="p-3 bg-white/20 backdrop-blur-sm rounded-full w-fit mx-auto mb-2">
-                    <FaRegClock className="h-6 w-6 text-white" />
-                  </div>
-                  <div className="font-bold text-white">24hrs</div>
-                  <div className="text-sm text-white/80">Approval Time</div>
-                </div>
-                <div className="text-center">
-                  <div className="p-3 bg-white/20 backdrop-blur-sm rounded-full w-fit mx-auto mb-2">
-                    <FaDollarSign className="h-6 w-6 text-white" />
-                  </div>
-                  <div className="font-bold text-white">2.5%</div>
-                  <div className="text-sm text-white/80">Monthly Rate</div>
-                </div>
-              </div>
-            </div>
-
-            <div
-              className={`${isVisible ? "scroll-reveal revealed" : "scroll-reveal"}`}
-              style={{ animationDelay: "0.3s" }}
-            >
-              <Image
-                src="/acc2bbc6-44b2-4742-ae7e-a5e4c3e3b393-930x620-Photoroom.png?"
-                alt="Logbook Loans"
-                width={2000}
-                height={500}
-                className="cover w-full"
-              />
-            </div>
+    <div className="min-h-screen  page-enter">
+      {/* Hero Section - updated to match About Us style */}
+      <section className="relative w-full h-[340px] md:h-[520px] flex items-center overflow-hidden p-0">
+        <div className="absolute inset-0 w-full h-full -z-10">
+          <Image
+            src="/handsome-elegant-man-car-salon.jpg"
+            alt="Service background"
+            fill
+            style={{ objectFit: "cover" }}
+            priority
+          />
+          <div className="absolute inset-0 w-full h-full pointer-events-none z-10">
+            <div className="absolute left-0 top-0 h-full w-2/3"
+              style={{
+                background: 'linear-gradient(90deg,rgba(3, 7, 17, 0.8) 0%,rgba(7, 14, 32, 0.6) 40%, transparent 100%)',
+              }}
+            />
           </div>
+        </div>
+        <div className="relative z-10 flex flex-col justify-center items-start h-full pl-8 md:pl-16 max-w-2xl">
+          <h1 className="text-white text-2xl md:text-4xl font-extrabold leading-tight mb-2 drop-shadow-lg">
+            Logbook Loans
+          </h1>
+          <p className="text-white/80 text-sm md:text-lg font-medium leading-relaxed mb-2 max-w-lg">
+            Get instant cash using your vehicle as collateral, with fast approval and flexible terms.
+          </p>
         </div>
       </section>
 

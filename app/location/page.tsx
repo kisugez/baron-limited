@@ -32,7 +32,7 @@ export default function LocationPage() {
   }, [])
 
   return (
-    <div className="min-h-screen pt-16 page-enter">
+    <div className="min-h-screen  page-enter">
       {/* Hero Section */}
       <section
         className="py-24 relative overflow-hidden"
@@ -55,200 +55,101 @@ export default function LocationPage() {
         </div>
       </section>
 
-      {/* Location Details */}
-      <section className="py-24 gradient-blue-light">
-        <div className="space-y-24">
-          {/* Main Branch - Current Location */}
-          <div className="w-full flex flex-col items-center">
-            <div className="flex flex-col items-center mb-4">
-              <span className="inline-flex items-center justify-center w-14 h-14 rounded-full bg-gradient-to-tr from-blue-900 to-blue-400 shadow-lg mb-2">
-                <FaMapMarkerAlt className="text-white text-3xl" />
-              </span>
-              <h2 className="text-3xl font-bold text-gray-900 text-center">Current Main Branch </h2>
-            </div>
-            <div className="relative w-full max-w-5xl group transition-transform duration-300 hover:-translate-y-2">
-              <div className="absolute top-0 left-0 w-full h-20 bg-gradient-to-b from-blue-100/60 to-transparent rounded-t-3xl z-10 pointer-events-none"></div>
-              <div className="bg-white/80 backdrop-blur-md rounded-3xl border-4 border-blue-700/30 shadow-2xl overflow-hidden transition-shadow duration-300 group-hover:shadow-blue-300/60">
+      {/* Location Details - alternating layout for each branch, reduced map width, spacing, and white bg for middle */}
+      <section className="py-16 gradient-blue-light">
+        <div className="space-y-16">
+          {/* Main Branch - Map Left, Details Right */}
+          <div className="w-full grid md:grid-cols-2 gap-8 items-center">
+            <div className="order-1 md:order-1 flex justify-center">
+              <div className="bg-white/80 backdrop-blur-md rounded-2xl border-2 border-blue-700/30 shadow-xl overflow-hidden w-full max-w-md">
                 <iframe
                   src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d255285.78415500378!2d36.545091128125!3d-1.268605807114327!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f05277f6b2877%3A0x2fea93ffce995873!2sBARON%20CAPITAL%20LIMITED!5e0!3m2!1sen!2sqa!4v1751576532766!5m2!1sen!2sqa"
                   width="100%"
-                  height="420"
+                  height="260"
                   style={{ border: 0 }}
                   allowFullScreen={true}
                   loading="lazy"
                   referrerPolicy="no-referrer-when-downgrade"
                   title="Baron Capital Map"
-                  className="rounded-2xl w-full"
+                  className="rounded-xl w-full"
                 ></iframe>
               </div>
             </div>
-          </div>
-          {/* Branch 1: Jewel Complex */}
-          <div className="w-full flex flex-col items-center">
-            <div className="flex flex-col items-center mb-4">
-              <span className="inline-flex items-center justify-center w-14 h-14 rounded-full bg-gradient-to-tr from-blue-900 to-blue-400 shadow-lg mb-2">
-                <FaMapMarkerAlt className="text-white text-3xl" />
-              </span>
-              <h2 className="text-3xl font-bold text-blue-900 text-center">Jewel Complex Branch</h2>
+            <div className="order-2 md:order-2 flex flex-col gap-2 px-6 md:px-12 justify-center">
+              <h2 className="text-2xl font-bold text-gray-900">Current Main Branch</h2>
+              <p className="text-base text-gray-700">
+                Located in the heart of Nairobi, our main branch offers easy access via public and private transport. Enjoy personalized service, secure processing, and instant decisions in a modern, welcoming environment. Parking is available nearby, and our team is ready to assist you with all your financial needs.
+              </p>
+              <a href="https://maps.app.goo.gl/jrH2XpxY4CV3sBNe9" target="_blank" rel="noopener noreferrer" className="text-blue-700 underline text-xs mt-1">Open in Google Maps</a>
             </div>
-            <div className="relative w-full max-w-5xl group transition-transform duration-300 hover:-translate-y-2">
-              <div className="absolute top-0 left-0 w-full h-20 bg-gradient-to-b from-blue-100/60 to-transparent rounded-t-3xl z-10 pointer-events-none"></div>
-              <div className="bg-white/80 backdrop-blur-md rounded-3xl border-4 border-blue-700/30 shadow-2xl overflow-hidden transition-shadow duration-300 group-hover:shadow-blue-300/60">
+          </div>
+          {/* Jewel Complex Branch - Details Left, Map Right, white bg */}
+          <div className="w-full grid md:grid-cols-2 gap-8 items-center bg-white rounded-2xl py-8">
+            <div className="order-2 md:order-1 flex flex-col gap-2 px-6 md:px-12 justify-center">
+              <h2 className="text-2xl font-bold text-blue-900">Jewel Complex Branch</h2>
+              <p className="text-base text-gray-700">
+                Our Jewel Complex branch is conveniently located for clients in the eastern Nairobi region. Visit us for face-to-face consultations, secure document processing, and expert financial guidance. Easily accessible by car or public transport, with clear signage and a friendly team to welcome you.
+              </p>
+              <a href="https://maps.app.goo.gl/jrH2XpxY4CV3sBNe9" target="_blank" rel="noopener noreferrer" className="text-blue-700 underline text-xs mt-1">Open in Google Maps</a>
+            </div>
+            <div className="order-1 md:order-2 flex justify-center">
+              <div className="bg-white/80 backdrop-blur-md rounded-2xl border-2 border-blue-700/30 shadow-xl overflow-hidden w-full max-w-md">
                 <iframe
                   src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.9147668953156!2d36.887420075319376!3d-1.2193999987689543!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f15001ea5a7cf%3A0x4f6d959e1d215455!2sJEWEL%20COMPLEX!5e0!3m2!1sen!2sqa!4v1751690230909!5m2!1sen!2sqa"
                   width="100%"
-                  height="420"
+                  height="260"
                   style={{ border: 0 }}
                   allowFullScreen={true}
                   loading="lazy"
                   referrerPolicy="no-referrer-when-downgrade"
                   title="Jewel Complex Branch"
-                  className="rounded-2xl w-full"
+                  className="rounded-xl w-full"
                 ></iframe>
               </div>
             </div>
-            <a href="https://maps.app.goo.gl/jrH2XpxY4CV3sBNe9" target="_blank" rel="noopener noreferrer" className="text-blue-700 underline text-sm text-center block mt-2">Open in Google Maps</a>
           </div>
-          {/* Branch 2: Ngong Business Arcade */}
-          <div className="w-full flex flex-col items-center">
-            <div className="flex flex-col items-center mb-4">
-              <span className="inline-flex items-center justify-center w-14 h-14 rounded-full bg-gradient-to-tr from-blue-900 to-blue-400 shadow-lg mb-2">
-                <FaMapMarkerAlt className="text-white text-3xl" />
-              </span>
-              <h2 className="text-3xl font-bold text-blue-900 text-center">Ngong Business Arcade Branch</h2>
-            </div>
-            <div className="relative w-full max-w-5xl group transition-transform duration-300 hover:-translate-y-2">
-              <div className="absolute top-0 left-0 w-full h-20 bg-gradient-to-b from-blue-100/60 to-transparent rounded-t-3xl z-10 pointer-events-none"></div>
-              <div className="bg-white/80 backdrop-blur-md rounded-3xl border-4 border-blue-700/30 shadow-2xl overflow-hidden transition-shadow duration-300 group-hover:shadow-blue-300/60">
+          {/* Ngong Business Arcade Branch - Map Left, Details Right */}
+          <div className="w-full grid md:grid-cols-2 gap-8 items-center">
+            <div className="order-1 md:order-1 flex justify-center">
+              <div className="bg-white/80 backdrop-blur-md rounded-2xl border-2 border-blue-700/30 shadow-xl overflow-hidden w-full max-w-md">
                 <iframe
                   src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.6967492859353!2d36.65371407531964!3d-1.3585781986285457!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f0321a19fa635%3A0x6b08bcc9d46155f4!2sNgong%20Business%20Arcade!5e0!3m2!1sen!2sqa!4v1751690459517!5m2!1sen!2sqa"
                   width="100%"
-                  height="420"
+                  height="260"
                   style={{ border: 0 }}
                   allowFullScreen={true}
                   loading="lazy"
                   referrerPolicy="no-referrer-when-downgrade"
                   title="Ngong Business Arcade Branch"
-                  className="rounded-2xl w-full"
+                  className="rounded-xl w-full"
                 ></iframe>
               </div>
             </div>
+            <div className="order-2 md:order-2 flex flex-col gap-2 px-6 md:px-12 justify-center">
+              <h2 className="text-2xl font-bold text-blue-900">Ngong Business Arcade Branch</h2>
+              <p className="text-base text-gray-700">
+                Serving the Ngong and surrounding areas, this branch is ideal for clients seeking quick access and expert support. Find us in the Ngong Business Arcade, with ample parking and easy access by public transport. Our team is ready to help you with all your financial needs in a secure, comfortable setting.
+              </p>
+            </div>
           </div>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center mt-12">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center mt-8">
             <Button
-              size="lg"
-              className="rounded-full text-white hover-lift"
+              size="md"
+              className="rounded-full text-white hover-lift px-6 py-2"
               style={{ backgroundColor: "#041a55" }}
               asChild
             >
               <Link href="/contact">Schedule a Visit</Link>
             </Button>
             <Button
-              size="lg"
+              size="md"
               variant="outline"
-              className="rounded-full hover-lift bg-transparent"
+              className="rounded-full hover-lift bg-transparent px-6 py-2"
               style={{ borderColor: "#041a55", color: "#041a55" }}
               asChild
             >
               <a href="tel:+254700000000">Call Now</a>
             </Button>
-          </div>
-        </div>
-      </section>
-
-      {/* Why Visit Section */}
-      <section className="py-24 gradient-blue-section">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className={`text-center mb-16 scroll-reveal`}>
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">Why Visit Our Office?</h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Experience personalized service and expert financial guidance in our modern, welcoming environment
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {[
-              {
-                icon: FaUsers,
-                title: "Personal Consultation",
-                description: "Face-to-face meetings with our financial experts",
-              },
-              {
-                icon: FaShieldAlt,
-                title: "Secure Processing",
-                description: "Document verification and secure loan processing",
-              },
-              {
-                icon: FaRegClock,
-                title: "Instant Decisions",
-                description: "Get immediate loan approval decisions",
-              },
-              {
-                icon: FaCompass,
-                title: "Expert Guidance",
-                description: "Personalized financial advice and planning",
-              },
-            ].map((benefit, index) => (
-              <div
-                key={benefit.title}
-                className={`text-center bg-white/60 backdrop-blur-sm rounded-2xl p-8 card-hover-effect scroll-reveal`}
-                style={{ animationDelay: `${index * 0.1}s` }}
-              >
-                <div className="flex justify-center mb-4">
-                  <div className="p-4 rounded-2xl" style={{ backgroundColor: "#041a55" }}>
-                    <benefit.icon className="h-8 w-8 text-white" />
-                  </div>
-                </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-3">{benefit.title}</h3>
-                <p className="text-gray-600">{benefit.description}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* How to Find Us */}
-      <section className="py-24 gradient-blue-light">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className={`text-center mb-16 scroll-reveal`}>
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">How to Find Us</h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              We're conveniently located in Nairobi CBD with easy access via public transport and private vehicles
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-8">
-            {[
-              {
-                icon: FaCar,
-                title: "By Car",
-                description: "Located on Kimathi Street in Nairobi CBD. Free parking available nearby.",
-              },
-              {
-                icon: FaCompass,
-                title: "Public Transport",
-                description: "Accessible via matatu routes to CBD. Short walk from major bus stops.",
-              },
-              {
-                icon: FaMapMarkerAlt,
-                title: "Landmarks",
-                description: "Near major CBD landmarks. Look for our distinctive blue signage.",
-              },
-            ].map((method, index) => (
-              <div
-                key={method.title}
-                className={`text-center bg-white/60 backdrop-blur-sm rounded-2xl p-8 card-hover-effect scroll-reveal`}
-                style={{ animationDelay: `${index * 0.1}s` }}
-              >
-                <div className="flex justify-center mb-4">
-                  <div className="p-4 rounded-2xl" style={{ backgroundColor: "#041a55" }}>
-                    <method.icon className="h-8 w-8 text-white" />
-                  </div>
-                </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-3">{method.title}</h3>
-                <p className="text-gray-600">{method.description}</p>
-              </div>
-            ))}
           </div>
         </div>
       </section>

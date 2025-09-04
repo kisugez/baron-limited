@@ -54,7 +54,7 @@ export default function ContactPage() {
   }
 
   return (
-    <div className="min-h-screen pt-16 page-enter bg-gray-100">
+    <div className="min-h-screen  page-enter bg-gray-100">
       {/* Hero Section */}
       <section className="py-24 relative overflow-hidden">
         <div className="absolute inset-0 w-full h-full -z-10">

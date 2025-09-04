@@ -50,43 +50,32 @@ export function ClientStories() {
   ]
 
   return (
-    <section id="client-stories" className="relative py-24">
+    <section id="client-stories" className="relative h-[320px] md:h-[360px] flex items-center justify-center">
       {/* Background Image */}
       <div className="absolute inset-0 w-full h-full -z-10">
         <Image
           src="/2148190687.jpg"
-          alt="Happy client background"
+          alt="Business team background"
           fill
           style={{ objectFit: "cover" }}
-          className="brightness-75"
         />
+        {/* Dark transparent overlay */}
+        <div className="absolute inset-0 bg-[#003366]/80" />
       </div>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-stretch">
-        {/* Left side empty for transition */}
-        <div className="md:w-1/2 w-full" />
-        {/* Right Overlay with Testimonial - full height */}
-        <div className="md:w-1/2 w-full flex items-center">
-          <div className="bg-blue-900/70 backdrop-blur-lg rounded-2xl p-10 md:p-16 text-white w-full h-full flex flex-col justify-center transition-all duration-700">
-            <h2 className="text-4xl font-bold mb-6">
-              What Our <span className="text-gradient">Clients Say</span>
-            </h2>
-            <div className="mb-8">
-              <div className="flex items-center space-x-1 mb-4">
-                {[...Array(testimonials[0].rating)].map((_, i) => (
-                  <FaStar key={i} className="h-6 w-6 text-yellow-400 fill-current" />
-                ))}
-              </div>
-              <div className="relative mb-6">
-                <FaQuoteLeft className="absolute -top-2 -left-2 h-10 w-10 text-blue-200" />
-                <p className="text-xl leading-relaxed pl-12 italic">{testimonials[0].content}</p>
-              </div>
-              <div className="mt-6">
-                <div className="font-semibold text-2xl">{testimonials[0].name}</div>
-                <div className="text-base text-blue-100">{testimonials[0].role}</div>
-              </div>
-            </div>
-          </div>
-        </div>
+      {/* Centered Content */}
+      <div className="relative z-10 flex flex-col items-center justify-center w-full h-full">
+        <h1 className="text-white text-lg md:text-2xl font-bold text-center mb-2 drop-shadow-lg max-w-xl leading-tight">
+          Empowering Kenyans to unlock new opportunities and achieve their financial goals
+        </h1>
+        <h2 className="text-white text-base md:text-lg font-medium text-center mb-6 drop-shadow max-w-md leading-tight">
+          Flexible loans, fast approvals, and trusted support for your business and personal growth
+        </h2>
+        <a
+          href="/contact"
+          className="mt-2 px-6 py-2 rounded-full text-white text-base font-semibold shadow-lg hover:scale-105 transition border-2 border-white bg-transparent"
+        >
+          Get Started
+        </a>
       </div>
     </section>
   )

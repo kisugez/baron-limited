@@ -5,6 +5,7 @@ import Image from "next/image"
 import { FaShieldAlt, FaBullseye, FaHeart, FaEye, FaUsers, FaAward, FaChartLine } from "react-icons/fa"
 import { MovingIcons } from "@/components/moving-icons"
 import { useScrollReveal } from "@/hooks/useScrollReveal"
+import { ClientStories } from "@/components/client-stories"
 
 export default function AboutPage() {
   useScrollReveal()
@@ -83,85 +84,62 @@ export default function AboutPage() {
   ]
 
   return (
-    <div className="min-h-screen pt-16 page-enter bg-gray-100">
-      {/* Hero Section */}
-      <section className="py-24 relative overflow-hidden">
+    <div className="min-h-screen pt-0 page-enter bg-gray-100">
+      
+      {/* Hero Section - full width, left-aligned */}
+      <section className="relative w-full h-[340px] md:h-[520px] flex items-center overflow-hidden p-0">
         <div className="absolute inset-0 w-full h-full -z-10">
-          <img src="/baron logo.jpg" alt="About background" className="w-full h-full object-cover" />
-          <div className="absolute inset-0 bg-black/60" />
+          <Image
+            src="/Screenshot 2025-09-04 at 11.19.15 PM.png"
+            alt="About background"
+            fill
+            style={{ objectFit: "cover" }}
+            priority
+          />
+                <div className="absolute inset-0 w-full h-full pointer-events-none z-10">
+        <div className="absolute left-0 top-0 h-full w-2/3"
+          style={{
+            background: 'linear-gradient(90deg,rgba(3, 7, 17, 0.8) 0%,rgba(7, 14, 32, 0.6) 40%, transparent 100%)',
+          }}
+        />
+      </div>
         </div>
-        <MovingIcons variant="background" />
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-          <div className={`text-center space-y-8 ${isVisible ? "scroll-reveal revealed" : "scroll-reveal"}`}>
-            <h1 className="text-5xl lg:text-7xl font-bold text-white leading-tight">About Baron Capital Limited</h1>
-            <p className="text-xl text-white/80 max-w-4xl mx-auto leading-relaxed">
-              We are a leading financial services company in Kenya, committed to providing innovative and accessible
-              financial solutions that empower individuals and businesses to achieve their goals.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* Our Story */}
-      <section className="py-24 gradient-blue-light">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <div className={`space-y-8 scroll-reveal`}>
-              <h2 className="text-4xl font-bold text-gray-900">Our Story</h2>
-              <div className="space-y-6 text-gray-600 leading-relaxed">
-                <p>
-                  Founded with a vision to democratize access to financial services in Kenya, Baron Capital Limited has
-                  grown from a small startup to a trusted financial partner for thousands of Kenyans.
-                </p>
-                <p>
-                  Our journey began with a simple belief: everyone deserves access to fair, transparent, and affordable
-                  financial services. This belief continues to drive our mission today as we expand our services and
-                  reach more communities across Kenya.
-                </p>
-                <p>
-                  Today, we are proud to be a licensed and regulated financial institution, offering a comprehensive
-                  range of loan products and financial services designed to meet the diverse needs of our clients.
-                </p>
-              </div>
-            </div>
-
-            <div className={`scroll-reveal`}>
-              <Image
-                src="/baron logo.jpg?height=500&width=600"
-                alt="Baron Capital Office"
-                width={1000}
-                height={600}
-                className="rounded-2xl shadow-2xl"
-              />
-            </div>
-          </div>
+        <div className="relative z-10 flex flex-col justify-center items-start h-full pl-8 md:pl-16 max-w-2xl">
+          <h1 className="text-white text-2xl md:text-4xl font-extrabold leading-tight mb-4 drop-shadow-lg">
+            Beyond Finance: Building Bridges to Prosperity
+          </h1>
+          <p className="text-white/90 text-sm md:text-lg font-medium leading-relaxed mb-2 max-w-lg">
+            At Baron Capital, we’re more than a financial company: we’re bridge-builders. We connect Kenyans to their ambitions. By simplifying how people access capital, we unlock growth, open markets, and connect communities to prosperity.
+          </p>
         </div>
       </section>
 
-      {/* Achievements */}
-      <section className="py-24 gradient-blue-section">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className={`text-center mb-16 scroll-reveal`}>
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">Our Achievements</h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">Numbers that reflect our commitment to excellence</p>
+      {/* Our Story - left section uses provided team image */}
+      <section className="py-20 bg-[#f7f8fa]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row gap-12 items-center">
+          {/* Left: Provided team image with increased width */}
+          <div className="rounded-2xl overflow-hidden shadow-lg w-full max-w-2xl">
+            <Image src="/Screenshot 2025-09-04 at 11.13.59 PM.png" alt="Baron Capital Team" width={1200} height={700} className="object-cover w-full h-full" />
           </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {achievements.map((achievement, index) => (
-              <div
-                key={achievement.label}
-                className={`text-center bg-white/60 backdrop-blur-sm rounded-2xl p-8 card-hover-effect scroll-reveal`}
-                style={{ animationDelay: `${index * 0.1}s` }}
-              >
-                <div className="flex justify-center mb-4">
-                  <div className="p-4 rounded-2xl" style={{ backgroundColor: "#041a55" }}>
-                    <achievement.icon className="h-8 w-8 text-white" />
-                  </div>
-                </div>
-                <div className="text-3xl font-bold text-gray-900 mb-2">{achievement.value}</div>
-                <div className="text-gray-600">{achievement.label}</div>
-              </div>
-            ))}
+          {/* Right: Details pushed right and smaller */}
+          <div className="flex-1 md:pl-20">
+            <h2 className="text-3xl font-extrabold text-[#003366] mb-3 flex items-center">
+              Our Story <span className="ml-2 text-[#009FE3] text-2xl">&#x27A4;</span>
+            </h2>
+            <div className="space-y-4 text-gray-700 text-base leading-relaxed max-w-md">
+              <p>
+                Across Kenya, financial solutions are more than transactions. They are gateways to prosperity, connecting people, businesses, and communities to opportunities and growth.
+              </p>
+              <p>
+                From enabling entrepreneurs in Nairobi to expand their businesses, to supporting families in Kisumu to secure their future, Baron Capital is the bridge that makes it all possible.
+              </p>
+              <p>
+                Through trusted expertise and customer-centric innovation, we build connections that inspire progress, strengthen local economies, and create lasting impact.
+              </p>
+              <p>
+                Since 2013, our transformative journey has been defined by relentless innovation, collaboration, and an unwavering belief in improving lives through accessible, people-centered financial services.
+              </p>
+            </div>
           </div>
         </div>
       </section>
@@ -193,39 +171,7 @@ export default function AboutPage() {
           </div>
         </div>
       </section>
-
-      {/* Leadership Team */}
-      <section className="py-24 gradient-blue-section">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className={`text-center mb-16 scroll-reveal`}>
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">Our Leadership Team</h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Meet the experienced professionals leading Baron Capital Limited
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {team.map((member, index) => (
-              <div
-                key={member.name}
-                className={`text-center bg-white/60 backdrop-blur-sm rounded-2xl p-8 card-hover-effect scroll-reveal`}
-                style={{ animationDelay: `${index * 0.1}s` }}
-              >
-                <div className="relative mb-6">
-                  {/* Placeholder for member image, can be replaced with actual images */}
-                </div>
-                <div>
-                  <h3 className="text-xl font-bold text-gray-900 mb-2">{member.name}</h3>
-                  <p className="font-medium mb-4" style={{ color: "#041a55" }}>
-                    {member.role}
-                  </p>
-                  <p className="text-gray-600">{member.bio}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+,     <ClientStories />
     </div>
   )
 }

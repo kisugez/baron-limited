@@ -1,7 +1,20 @@
-@import "/fonts/circular-std.css";
+@import "/fonts/gilroy.css";
+
+@font-face {
+  font-family: 'Gilroy';
+  src: url('/fonts/gilroy/Gilroy-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Gilroy';
+  src: url('/fonts/gilroy/Gilroy-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}
 
 html, body, body * {
-  font-family: 'Circular Std', Arial, sans-serif !important;
+  font-family: 'Gilroy', Arial, sans-serif !important;
 }
 
 @tailwind base;
@@ -103,6 +116,15 @@ section {
   100% {
     transform: translateX(-50%);
   }
+}
+
+@keyframes trusted-carousel {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-trusted-carousel {
+  animation: trusted-carousel 40s linear infinite;
 }
 
 .gradient-blue {

@@ -92,3 +92,9 @@ body {
     @apply bg-background text-foreground;
   }
 }
+
+.desktop-nav-border {
+  border: 0.5px solid #b0b3b8 !important;
+  box-shadow: 0 2px 16px 0 rgba(180, 180, 200, 0.12), 0 1.5px 4px 0 rgba(220,220,230,0.10);
+  backdrop-filter: blur(2px);
+}

@@ -75,12 +75,18 @@ export function HeroSection() {
         { icon: <FaChartLine className="h-4 w-4 text-blue-700" />, label: "Flexible" },
       ],
     },
-  ]
+  ];
+  const images = [
+    "/handsome-elegant-man-car-salon.jpg",
+    "/happy-young-african-man-holding-cellphone.jpg",
+    "/2148190687.jpg",
+    "/images/african-american-young-freelancers-couch-sharing-business-idea.jpg",
+    "/low-angle-view-carefree-young-businessman-holding-newspaper-raising-their-hands.jpg",
+    "/smiling-businesswoman-shaking-hands-with-partner.jpg",
+  ];
   const [current, setCurrent] = useState(0);
-  const handlePrev = () => setCurrent((c) => (c - 1 + services.length) % services.length);
-  const handleNext = () => setCurrent((c) => (c + 1) % services.length);
-
   const [isImageTransitioning, setIsImageTransitioning] = useState(false);
+
   useEffect(() => {
     setIsImageTransitioning(true);
     const imageTimer = setTimeout(() => setIsImageTransitioning(false), 700); // image transition duration
@@ -91,27 +97,34 @@ export function HeroSection() {
     };
   }, [current, services.length]);
 
-  // Only use one image for all slides
-  const heroImage = "/images/african-american-young-freelancers-couch-sharing-business-idea.jpg";
-
   return (
-    <section className="relative w-screen h-screen min-h-screen max-w-none flex items-center justify-start overflow-hidden p-0 m-0 z-0">
-      {/* Slider Image with lighter dark overlay */}
+    <section className="relative w-full h-screen max-w-none flex items-center justify-start overflow-x-hidden overflow-y-visible p-0 m-0 z-0">
+      {/* Slider Images */}
       <div className="absolute inset-0 w-full h-full z-0 overflow-hidden">
-        <img
-          src={heroImage}
-          alt="Hero Background"
-          className="object-cover w-full h-full"
-          style={{ opacity: 0.85 }}
-          draggable={false}
+        {images.map((img, idx) => (
+          <img
+            key={img}
+            src={img}
+            alt="Hero Background"
+            className={`object-cover w-full h-full absolute inset-0 transition-opacity duration-700 ${idx === current && !isImageTransitioning ? 'opacity-100 z-0' : 'opacity-0 z-0'}`}
+            style={{ opacity: idx === current ? 0.85 : 0 }}
+            draggable={false}
+          />
+        ))}
+      </div>
+      {/* Blue overlay always above images */}
+      <div className="absolute inset-0 w-full h-full pointer-events-none z-10">
+        <div className="absolute left-0 top-0 h-full w-2/3"
+          style={{
+            background: 'linear-gradient(90deg, #041a55cc 0%, #041a5599 40%, transparent 100%)',
+          }}
         />
-        <div className="absolute inset-0 w-full h-full bg-black/40" />
       </div>
       {/* Slide Content - words enter after image transition */}
-      <div className="relative w-full max-w-2xl px-4 sm:px-8 lg:px-16 z-10 h-full flex items-center justify-start min-h-full overflow-visible pt-32 sm:pt-40">
+      <div className="relative w-full max-w-2xl px-4 sm:px-8 lg:px-16 z-20 h-full flex items-center justify-start min-h-full overflow-visible pt-32 sm:pt-40">
         <div
           key={current}
-          className={`w-full max-w-lg flex flex-col items-start animate-slide-in-right-delayed`}
+          className={`w-full max-w-lg flex flex-col items-start transition-opacity duration-700 ${isImageTransitioning ? 'opacity-0' : 'opacity-100'}`}
         >
           <span className="mb-3 inline-block rounded-full border border-white text-white text-xs font-bold px-4 py-1 tracking-widest shadow-sm bg-transparent">
             {current === 0 ? "LOANS" :
@@ -136,55 +149,12 @@ export function HeroSection() {
           </div>
           <Link
             href={services[current].href}
-            className="inline-block rounded-full bg-white text-blue-900 px-6 py-2 text-base font-semibold shadow hover:bg-blue-100 transition-all"
+            className="inline-block rounded-full border border-white text-white text-xl font-bold px-14 py-1 tracking-widest shadow-sm bg-transparent"
           >
             {services[current].cta}
           </Link>
         </div>
       </div>
-      <style jsx global>{`
-        @keyframes hero-slide-up {
-          0% { opacity: 0; transform: translateY(40px); }
-          100% { opacity: 1; transform: translateY(0); }
-        }
-        .animate-hero-slide-up {
-          animation: hero-slide-up 0.8s cubic-bezier(.4,0,.2,1);
-        }
-        @keyframes fade-in {
-          0% { opacity: 0; }
-          100% { opacity: 1; }
-        }
-        .animate-fade-in {
-          animation: fade-in 1.2s cubic-bezier(.4,0,.2,1);
-        }
-        @keyframes slide-in-left {
-          0% { transform: translateX(-60px); opacity: 0.7; }
-          100% { transform: translateX(0); opacity: 1; }
-        }
-        .animate-slide-in-left {
-          animation: slide-in-left 1s cubic-bezier(.4,0,.2,1);
-        }
-        @keyframes slide-in-right {
-          0% { transform: translateX(60px); opacity: 0.7; }
-          100% { transform: translateX(0); opacity: 1; }
-        }
-        .animate-slide-in-right {
-          animation: slide-in-right 1s cubic-bezier(.4,0,.2,1);
-        }
-        @keyframes slide-in-right-delayed {
-          0% { opacity: 0; transform: translateX(60px); }
-          40% { opacity: 0; transform: translateX(60px); }
-          100% { opacity: 1; transform: translateX(0); }
-        }
-        .animate-slide-in-right-delayed {
-          animation: slide-in-right-delayed 1.2s cubic-bezier(.4,0,.2,1);
-        }
-        /* Ensure next section starts after hero and is full width */
-        section + section {
-          width: 100vw;
-          min-width: 100vw;
-        }
-      `}</style>
     </section>
-  )
+  );
 }
